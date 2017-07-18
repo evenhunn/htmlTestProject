@@ -1,0 +1,138 @@
+.navtest {
+  border: 2px solid #777777;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #aaaaaa;
+}
+.navlist {
+  display: flex;
+  margin: 0;
+}
+.navbar-item {
+  list-style: none;
+  padding: 10px;
+  font-weight: normal;
+  font-family: "Arial";
+}
+@media (max-width: 768px) {
+  .navbar-item {
+    display: none;
+  }
+}
+.home-item {
+  font-weight: bolder;
+}
+.navlist-collapsed {
+  display: block;
+  margin: 0;
+}
+.home-item-collapsed {
+  list-style: none;
+  padding: 10px;
+  font-weight: normal;
+  font-family: "Arial";
+  font-weight: bolder;
+}
+@media (max-width: 768px) {
+  .home-item-collapsed {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .home-item-collapsed {
+    display: inline-flex;
+  }
+}
+.logo {
+  list-style: none;
+  float: left;
+}
+.logo > img {
+  height: 30px;
+}
+@media (min-width: 769px) {
+  .navlist-collapsed {
+    display: none;
+  }
+}
+.dropdown-button {
+  float: right;
+  list-style: none;
+  margin-right: 5%;
+}
+.dropdown-button > button {
+  padding: 10px 30px;
+  border: 1px solid #777777;
+  background-color: #999999;
+}
+.dropdown-button > button:hover {
+  background-color: #CCCCCC;
+}
+.dropdown-item {
+  list-style: none;
+  float: right;
+  margin-top: 40px;
+  margin-right: 5%;
+}
+.dropdown-content {
+  display: none;
+  float: right;
+  position: absolute;
+  background-color: #bbbbbb;
+}
+.dropdown-content > a {
+  color: #000000;
+  padding: 10px 20px;
+  font: "Arial";
+  display: block;
+  border: 1px solid #777777;
+  text-decoration: none;
+}
+.dropdown-content > a:hover {
+  background-color: #CCCCCC;
+}
+.show {
+  display: block;
+}
+@media (min-width: 1200px) {
+  .navtest {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    width: 150px;
+  }
+  .navlist {
+    display: block;
+    padding: 0;
+  }
+  .navbar-item {
+    padding: 10px auto;
+    margin: 0;
+  }
+  .main-area {
+    margin-left: 180px !important;
+    margin-top: 30px !important;
+  }
+}
+.main-area {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1020px;
+  font-family: "Arial";
+  display: block;
+  margin-top: 100px;
+}
+.main-area > h1 {
+  color: #111111;
+}
+.main-ingress {
+  color: #333333;
+  font-weight: bold;
+}
+.main-text {
+  color: #555555;
+}

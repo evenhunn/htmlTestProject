@@ -1,0 +1,155 @@
+@myNavColor: #aaaaaa;
+@myNavColor2: #bbbbbb;
+@navBorder: #777777;
+@fontColor: #000000;
+@navButtonColor: #999999;
+@navButtonHover: #CCCCCC;
+@internalNavBorder: #777777;
+@mainFont: "Arial";
+
+@fontColor1: #111111;
+@fontColor2: #333333;
+@fontColor3: #555555;
+
+.navtest {
+  border: 2px solid @navBorder;
+  display: block;
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  background-color: @myNavColor;
+}
+
+.navlist {
+  display: flex;
+  margin: 0;
+}
+
+.navbar-item{
+  list-style: none;
+  padding: 10px;
+  font-weight: normal;
+  font-family: @mainFont;
+  @media(max-width: 768px){
+    display: none;
+  }
+}
+
+.home-item{
+  font-weight: bolder;
+}
+
+.navlist-collapsed{
+  display: block;
+  margin: 0;
+}
+
+.home-item-collapsed{
+  .navbar-item;
+  .home-item;
+  @media(max-width: 768px){
+    display: inline-flex;
+  }
+}
+
+.logo {
+  list-style: none;
+  float: left;
+}
+.logo > img {
+  height: 30px;
+}
+
+@media(min-width: 769px){
+  .navlist-collapsed{
+    display:none;
+  }
+}
+
+.dropdown-button{
+  float: right;
+  list-style: none;
+  margin-right: 5%
+}
+
+.dropdown-button > button {
+  padding: 10px 30px;
+  border: 1px solid @internalNavBorder;
+  background-color: @navButtonColor;
+}
+
+.dropdown-button > button:hover {
+  background-color: @navButtonHover;
+}
+
+.dropdown-item {
+  list-style: none;
+  float: right;
+  margin-top: 40px;
+  margin-right: 5%;
+}
+
+.dropdown-content{
+  display: none;
+  float: right;
+  position: absolute;
+  background-color: @myNavColor2;
+}
+.dropdown-content > a {
+  color: @fontColor;
+  padding: 10px 20px;
+  font: @mainFont;
+  display: block;
+  border: 1px solid @internalNavBorder;
+  text-decoration: none;
+}
+.dropdown-content > a:hover {
+  background-color: @navButtonHover;
+}
+
+.show{
+  display: block;
+}
+
+@media(min-width: 1200px) {
+  .navtest {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    width: 150px;
+  }
+  .navlist{
+    display: block;
+    padding: 0;
+  }
+  .navbar-item{
+    padding: 10px auto;
+    margin: 0;
+  }
+  .main-area{
+    margin-left: 180px !important;
+    margin-top: 30px !important;
+  }
+}
+
+.main-area {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1020px;
+  font-family: @mainFont;
+  display: block;
+  margin-top: 100px;
+}
+.main-area > h1 {
+  color: @fontColor1;
+}
+.main-ingress {
+  color: @fontColor2;
+  font-weight: bold;
+}
+
+.main-text {
+  color: @fontColor3;
+}

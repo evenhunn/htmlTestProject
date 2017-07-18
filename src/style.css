@@ -1,0 +1,102 @@
+.myBorder {
+  border: 1px solid #AAAAAA;
+  border-radius: 10px;
+}
+.textField {
+  margin: 10px;
+}
+html {
+  display: table;
+  margin: auto;
+}
+body {
+  width: 1000px;
+  display: table-cell;
+  background: #DFEFFF !important;
+}
+.headText {
+  color: #0000EE;
+  font-weight: bold;
+  font-size: x-large;
+  margin: 10px;
+}
+.ingress {
+  color: #3333AA;
+  font-size: medium;
+  font-weight: bold;
+  margin: 10px;
+}
+.bodyText {
+  margin: 10px;
+  color: #444499;
+  font-size: small;
+  font-weight: normal;
+}
+.main-photo {
+  float: right;
+  margin: 10px;
+  width: 150px;
+  border: 1px solid #AAAAAA;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .main-photo {
+    width: 19.5%;
+  }
+}
+@media (max-width: 300px) {
+  .main-photo {
+    width: 90%;
+    float: none;
+  }
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 10px;
+}
+.flex-item {
+  border: 1px solid #AAAAAA;
+  border-radius: 10px;
+  display: block;
+  flex: 1;
+  background: #AADDFF;
+  padding: 10px;
+  width: auto;
+}
+.area {
+  float: left;
+  width: 350px;
+  height: auto;
+  border: 1px solid #AAAAAA !important;
+  border-radius: 10px !important;
+  margin: 10px;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .area {
+    width: 45%;
+  }
+  .myInput {
+    width: 50%;
+  }
+}
+.playPanel {
+  border: 1px solid #AAAAAA !important;
+  border-radius: 10px !important;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  float: right;
+  font-size: 8px;
+  width: 300px;
+  height: 300px;
+}
+@media (max-width: 600px) {
+  .playPanel {
+    width: 50%;
+    height: inherit;
+  }
+}

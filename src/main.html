@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Angular, as obtained from w3schools.com -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="main.html">
+        <div class="ingress">
+          2n, n &isin; Z
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="main.html">Home</a></li>
+        <li><a href="IncrementalGames/gamesMain.html">Incremental game</a></li>
+        <li><a href="#">DeadLink 2</a></li>
+        <li><a href="#">DeadLink 3</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div>
+  <img src="images/HansenEven.jpg" class="main-photo" ng-click=faceClick();>
+  <div style="float:right;">{{face}}</div>
+</div>
+
+<div class="headText">
+  Hello world!
+</div>
+
+
+<div class="ingress">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt ligula odio, sollicitudin iaculis nunc
+  commodo at. Nunc ac interdum orci, sit amet tincidunt diam. Nunc consectetur justo neque, eu mattis massa luctus
+  sed. In pellentesque diam massa, ut rutrum augue porta sed. Mauris quis neque eget est egestas vehicula. Praesent
+  dignissim rhoncus turpis, nec condimentum nisi volutpat auctor. Pellentesque habitant morbi tristique senectus et
+  netus et malesuada fames ac turpis egestas. In in lacus tempor, maximus neque malesuada, dapibus lectus.
+</div>
+<div class="bodyText">
+  Mazim hendrerit quo ne. Usu voluptatum posidonium quaerendum eu. Sit illud ullum doming ei. In tollit aliquando mei.
+  Eos ex zril euripidis dissentias, has senserit ullamcorper te, ne dicta mucius consequuntur mei.
+</div>
+<div class="panel area">
+  <div>
+    <ul class="flex-container">
+      <li ng-click="runFunction()" class="flex-item">
+        <p>Your input: &nbsp;<input type="text" class="myInput" ng-model="myInput"></p>
+      </li>
+      <li class="flex-item">
+        With another accent: {{myOutput()}}
+      </li>
+      <li class="flex-item">
+        {{textChanger}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="bodyText">
+  Vis eu soleat concludaturque, in est quas probo diceret. Enim vivendum referrentur his et, vis autem aperiri inimicus
+  in. Ut modo aperiam intellegat has, velit argumentum ea nam. An vel ignota expetendis dissentias, sit in wisi zril,
+  vix illum mollis eu. An ius nisl brute neglegentur, eos et abhorreant contentiones. Usu urbanitas efficiantur eu, mea
+  ut assum mnesarchum, corpora salutandi duo in.
+</div>
+
+<hr />
+
+<div class="panel playPanel" ng-click="iterateTheIV()">
+  <div class="bodyText" id="increasingValue">
+    Click here! <br>
+  </div>
+</div>
+<script>
+
+  // ##### Scrapped json-code #####
+  //function xkcdComic() {
+  //  comicNumber = Math.ceil(Math.random()*1862);
+  //  var xmlhttp = new XMLHttpRequest();
+  //  xmlhttp.onreadystatechange = function () {
+  //    if (this.readyState == 4 && this.status == 200) {
+  //      //myObj = JSON.parse(this.responseText);
+  //      document.getElementById("xkcd").innerHTML = myObj.month;
+  //    } else {
+  //      document.getElementById("xkcd2").innerHTML = "error: readyState = " + this.readyState + ", status = " + this.status;
+  //    }
+  //  };
+  //  xmlhttp.open("GET", "http://dynamic.xkcd.com/api-0/jsonp/comic/123", true);
+  //  xmlhttp.responseType = "JSON";
+  //  xmlhttp.send();
+  //}
+
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function ($scope) {
+    $scope.iteratingValue=1;
+
+    $scope.iterateTheIV = function() {
+      $scope.iteratingValue += 1;
+      if ($scope.iteratingValue<13) {
+        myArt = ""
+        for (i = 0; i < $scope.iteratingValue; i++) {
+          for (j = 0; j < i; j++) {
+            myArt += "E ";
+          }
+          myArt += "<br>";
+        }
+        document.getElementById("increasingValue").innerHTML = myArt;
+      }
+    };
+
+    $scope.myInput = "text goes here";
+    $scope.textChanger = "hello";
+    $scope.runFunction = function () {
+      $scope.textChanger = "Start typing!";
+    };
+    $scope.faceClick = function () {
+      $scope.face = "don't click my face, please";
+    };
+    $scope.myOutput = function () {
+      return $scope.myInput.replace(new RegExp('e', 'g'), 'a') + "!";
+    };
+  });
+</script>
+
+</body>
+</html>
