@@ -1,0 +1,142 @@
+@myColor1: #fbecd6; //#000000;
+@myColor2: #eed4b3; //#0b2202;
+@myColor3: #c5b48a; //#0b2d01;
+@myColor4: #8d7f6a; //#183c09;
+@myColor5: #87c1dd; //#300d45;
+@fontColor: #222222; //#895fa7;
+@mainFieldHeight: 600px;
+
+body {
+  background-color: @myColor2;
+}
+
+.logo {
+  height: 80px;
+  padding: 0;
+}
+
+.logo > img {
+  display: block;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.main-nav {
+  background-color: @myColor4;
+  padding: 0;
+  height: 80px;
+}
+
+.main-nav > ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.main-nav > ul > li {
+  list-style: none;
+  display: inline-block;
+  height: 100%;
+}
+
+.main-nav > ul > li > button {
+  background-color: transparent;
+  color: @fontColor;
+  font-weight: bold;
+  height: 100%;
+  padding: 0 20px;
+  border: none;
+  font-size: large;
+  outline: none;
+}
+
+.main-nav > ul > li > button:hover {
+  background-color: @myColor1;
+  border-bottom: 5px solid @myColor5 !important;
+}
+
+.nav-active {
+  border-bottom: 5px solid @myColor5 !important;
+}
+
+.sub-nav {
+  padding: 0;
+  height: @mainFieldHeight;
+}
+
+.sub-nav > div {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.sub-nav > div > ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sub-nav > div > ul > li {
+  flex: 1;
+  list-style: none;
+  width: 100%;
+}
+
+.sub-nav > div > ul > li > button {
+  background-color: @myColor3;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid @myColor2;
+}
+
+.sub-nav > div > ul > li > button:hover {
+  background-color: @myColor1;
+  border-right: 5px solid @myColor5;
+}
+
+.active-sub-nav-button{
+  border-right: 5px solid @myColor5 !important;
+}
+
+.show-content {
+  display: block !important;
+}
+.information > div {
+  display: none;
+}
+
+.information > div > div {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .main-nav > ul {
+    display: flex;
+  }
+  .main-nav > ul > li {
+    flex: 1;
+  }
+  .main-nav > ul > li > button {
+    padding: 10px;
+  }
+  .sub-nav {
+    height: auto;
+  }
+  .sub-nav > div > ul > li > button {
+    min-height: 40px;
+  }
+  .sub-nav > div > ul > li > button:hover {
+    border: none !important;
+    border-bottom: 5px solid @myColor5 !important;
+  }
+  .active-sub-nav-button {
+    border: none !important;
+    border-bottom: 5px solid @myColor5 !important;
+  }
+}
