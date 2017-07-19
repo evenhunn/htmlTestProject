@@ -3,5 +3,4 @@
  */
 function showMenu() {
   document.getElementById("navbar").classList.toggle("show-dropdown");
-  document.getElementById("navbar").classList.toggle("show-dropdown");
 }
