@@ -1,5 +1,12 @@
+/*Brown with a touch of blue
+@myColor1: #fbecd6; //#000000;
+@myColor2: #eed4b3; //#0b2202;
+@myColor3: #c5b48a; //#0b2d01;
+@myColor4: #8d7f6a; //#183c09;
+@myColor5: #87c1dd; //#300d45;
+*/
 body {
-  background-color: #eed4b3;
+  background-color: #FFFFFF;
   margin-top: 0;
 }
 .logo {
@@ -13,7 +20,7 @@ body {
   max-width: 100%;
 }
 .main-nav {
-  background-color: #8d7f6a;
+  background-color: #3b5998;
   padding: 0;
   height: 80px;
 }
@@ -29,7 +36,7 @@ body {
 }
 .main-nav > ul > li > button {
   background-color: transparent;
-  color: #222222;
+  color: #FFFFFF;
   font-weight: bold;
   height: 100%;
   padding: 0 20px;
@@ -39,10 +46,10 @@ body {
   transition-duration: 0.2s;
 }
 .main-nav > ul > li > button:hover {
-  background-color: #eed4b3;
+  background-color: #FFFFFF;
 }
 .nav-active {
-  border-bottom: 5px solid #87c1dd !important;
+  border-bottom: 5px solid #dfe3ee !important;
   transform: translateY(-2px);
   transition: border;
 }
@@ -68,7 +75,7 @@ body {
   width: 100%;
 }
 .sub-nav > div > ul > li > button {
-  background-color: #c5b48a;
+  background-color: #8b9dc3;
   font-weight: bold;
   width: 100%;
   height: 100%;
@@ -77,13 +84,13 @@ body {
   transition-duration: 0.2s;
 }
 .sub-nav > div > ul > li > button:hover {
-  background-color: #eed4b3;
+  background-color: #FFFFFF;
 }
 .sub-nav > div > ul > li > button:active {
   transform: translateX(10px);
 }
 .active-sub-nav-button {
-  border-right: 5px solid #87c1dd !important;
+  border-right: 5px solid #dfe3ee !important;
 }
 .show-content {
   display: block !important;
@@ -112,7 +119,7 @@ body {
   }
   .active-sub-nav-button {
     border: none !important;
-    border-bottom: 5px solid #87c1dd !important;
+    border-bottom: 5px solid #dfe3ee !important;
   }
 }
 .information {
@@ -121,20 +128,20 @@ body {
   overflow: auto;
 }
 .information::-webkit-scrollbar-track {
-  background-color: #eed4b3;
+  background-color: #FFFFFF;
 }
 .information::-webkit-scrollbar {
   width: 10px;
-  background-color: #8d7f6a;
+  background-color: #3b5998;
 }
 .information::-webkit-scrollbar-thumb {
-  background-color: #87c1dd;
+  background-color: #dfe3ee;
 }
 .information > div {
   height: 90%;
 }
 .foods > div {
-  border-top: 2px solid #8d7f6a;
+  border-top: 2px solid #3b5998;
   padding-top: 10px;
 }
 .split {
@@ -159,7 +166,7 @@ body {
 }
 @media (max-width: 640px) {
   .information {
-    border: 1px solid #8d7f6a;
+    border: 1px solid #3b5998;
     margin-bottom: 50px;
     height: auto;
   }
@@ -174,7 +181,7 @@ body {
 }
 .employee {
   clear: both;
-  border-top: 2px solid #8d7f6a;
+  border-top: 2px solid #3b5998;
 }
 .employee-pic {
   float: left;
@@ -205,26 +212,26 @@ body {
 }
 .history-button {
   display: block;
-  background-color: #8d7f6a;
+  background-color: #3b5998;
   max-width: 200px;
   text-align: center;
   transition-duration: 0.2s;
   user-select: none;
 }
 .history-button:hover {
-  background-color: #c5b48a;
+  background-color: #8b9dc3;
   cursor: default;
 }
 .history-button:active {
   transition-duration: 0.2s;
   transform: scale(0.9, 0.9);
-  background-color: #87c1dd;
+  background-color: #dfe3ee;
 }
 .career {
   height: 100%;
 }
 .career > div {
-  border-top: 2px solid #8d7f6a;
+  border-top: 2px solid #3b5998;
   padding-top: 10px;
   height: 90%;
 }
@@ -234,21 +241,21 @@ body {
 }
 .career-button {
   display: block;
-  background-color: #8d7f6a;
+  background-color: #3b5998;
   max-width: 200px;
   text-align: center;
   transition-duration: 0.2s;
   user-select: none;
 }
 .career-button:hover {
-  background-color: #c5b48a;
+  background-color: #8b9dc3;
   color: #FFFFFF;
 }
 .quiz-message {
   max-height: 40px;
-  background-color: #8d7f6a;
+  background-color: #3b5998;
   font-weight: bold;
-  color: #fbecd6;
+  color: #f7f7f7;
   min-width: 50%;
   text-align: center;
 }
@@ -268,7 +275,7 @@ body {
   vertical-align: middle;
   font-size: large;
   font-weight: bold;
-  color: #fbecd6;
+  color: #f7f7f7;
 }
 .quiz-suspense {
   transition-duration: 3s;
@@ -290,9 +297,9 @@ body {
 .slogan {
   display: table;
   height: 600px;
-  background-color: #8d7f6a;
+  background-color: #3b5998;
   font-style: italic;
-  color: #eed4b3;
+  color: #FFFFFF;
 }
 @media (max-width: 640px) {
   .slogan {
@@ -310,7 +317,7 @@ body {
 .contact-button {
   max-width: 140px;
   padding: 20px;
-  background-color: #8d7f6a;
+  background-color: #3b5998;
   text-align: center;
   display: table;
   margin-left: auto;
@@ -318,13 +325,13 @@ body {
   transition-duration: 0.3s;
 }
 .contact-button:hover {
-  background-color: #c5b48a;
+  background-color: #8b9dc3;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   cursor: default;
   user-select: none;
 }
 .contact-button:active {
-  background-color: #fbecd6;
+  background-color: #f7f7f7;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transform: scale(0.85, 0.85);
 }
@@ -335,8 +342,8 @@ body {
   margin: 20px 0;
 }
 .front-banner {
-  background-color: #8d7f6a;
-  color: #fbecd6;
+  background-color: #3b5998;
+  color: #f7f7f7;
   z-index: 1;
   position: absolute;
   top: 0;
