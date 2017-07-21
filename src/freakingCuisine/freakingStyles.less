@@ -2,7 +2,7 @@
 
 .information {
   font-size: medium;
-  max-height: @mainFieldHeight;
+  height: @mainFieldHeight;
   overflow: auto;
 }
 .information::-webkit-scrollbar-track{
@@ -16,19 +16,30 @@
   background-color: @myColor5;
 }
 
+.information > div {
+  height: 90%;
+}
 
-.picture-of-food {
+.foods > div{
+  border-top: 2px solid @myColor4;
+  padding-top: 10px;
+}
+
+.split {
   max-width: 50%;
   float: left;
+}
+
+.picture-of-food {
+  .split;
 }
 
 .picture-of-food > img {
   max-width: 100%;
 }
 .food-description {
-  max-width: 50%;
   padding: 10px;
-  float: left;
+  .split;
 }
 
 .price {
@@ -36,22 +47,11 @@
   font-family: "Arial Black";
 }
 
-.slogan {
-  height: @mainFieldHeight;
-  background-color: @myColor4;
-  font-style: italic;
-  color: @myColor2;
-}
-
-.slogan > div {
-  display: table-cell;
-  margin: auto;
-}
-
 @media (max-width: 640px) {
   .information {
     border: 1px solid @myColor4;
     margin-bottom: 50px;
+    height: auto;
   }
   .slogan {
     position: fixed;
@@ -62,3 +62,225 @@
     height: auto;
   }
 }
+
+.employee{
+  clear:both;
+  border-top: 2px solid @myColor4;
+}
+
+.employee-pic{
+  float: left;
+  width: 25%;
+}
+
+.employee-text{
+  float: left;
+  width: 75%;
+  padding-right: 10px;
+}
+
+.employee-pic > img {
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.name {clear:both;}
+
+.employee-stat{
+  font-weight: bold;
+}
+
+.input-list-element {
+  list-style: none;
+  font-weight: bolder;
+}
+
+.history-content {
+  display: none;
+  padding-top: 20px;
+}
+
+.history-button {
+  display: block;
+  background-color: @myColor4;
+  max-width: 200px;
+  text-align: center;
+  transition-duration: 0.2s;
+  user-select: none;
+}
+
+.history-button:hover {
+  background-color: @myColor3;
+  cursor: default;
+}
+
+.history-button:active {
+  transition-duration: 0.2s;
+  transform: scale(0.9,0.9);
+  background-color: @myColor5;
+}
+.career {
+  height: 100%;
+}
+.career > div{
+  border-top: 2px solid @myColor4;
+  padding-top: 10px;
+  height: 90%;
+}
+
+.career-questions > div{
+  display: none;
+  height: 100%;
+}
+
+
+.career-button {
+  display: block;
+  background-color: @myColor4;
+  max-width: 200px;
+  text-align: center;
+  transition-duration: 0.2s;
+  user-select: none;
+}
+
+.career-button:hover {
+  background-color: @myColor3;
+  color: #FFFFFF;
+}
+
+.quiz-message {
+  max-height: 40px;
+  background-color: @myColor4;
+  font-weight: bold;
+  color: @myColor1;
+  min-width: 50%;
+  text-align: center;
+}
+
+.quiz{
+  display: table;
+  float: left;
+  max-width: none;
+  width: 40%;
+  margin: 5%;
+  height: 30%;
+}
+
+.quiz:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.quiz > div {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: large;
+  font-weight: bold;
+  color: @myColor1;
+}
+
+.quiz-suspense{
+  transition-duration: 3s;
+  background-color: #000000;
+  transform: scale(0.7,0.7);
+}
+
+.quiz-correct {
+  transition-duration: 0.1s;
+  background-color: #008a00 !important;
+}
+
+.quiz-incorrect {
+  transition-duration: 0.4s;
+  background-color: #9f0000;
+}
+
+.start {
+  float: none;
+  margin: 20px auto;
+}
+
+.slogan {
+  display: table;
+  height: @mainFieldHeight;
+  background-color: @myColor4;
+  font-style: italic;
+  color: @myColor2;
+}
+
+@media (max-width: 640px) {
+  .slogan {
+    max-height: 20px;
+  }
+}
+
+.slogan > div {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.contact {
+  display: block;
+  width: 100%;
+}
+
+.contact-button {
+  max-width: 140px;
+  padding: 20px;
+  background-color: @myColor4;
+  text-align: center;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  transition-duration: 0.3s;
+}
+
+.contact-button:hover {
+  background-color: @myColor3;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  cursor: default;
+  user-select: none;
+}
+
+.contact-button:active {
+  background-color: @myColor1;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scale(0.85,0.85);
+}
+
+.contact-info {
+  display: none;
+}
+
+.contact-info-display {
+  margin: 20px 0;
+}
+
+.front-banner {
+  background-color: @myColor4;
+  color: @myColor1;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.remove-banner {
+  transition-duration: 0.5s;
+  transform: translateY(-50%) scale(1,0);
+}
+
+.front-banner > div{
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.front-banner > div > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: xx-large;
+}
+

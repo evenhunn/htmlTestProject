@@ -1,5 +1,6 @@
 body {
   background-color: #eed4b3;
+  margin-top: 0;
 }
 .logo {
   height: 80px;
@@ -35,13 +36,15 @@ body {
   border: none;
   font-size: large;
   outline: none;
+  transition-duration: 0.2s;
 }
 .main-nav > ul > li > button:hover {
-  background-color: #fbecd6;
-  border-bottom: 5px solid #87c1dd !important;
+  background-color: #eed4b3;
 }
 .nav-active {
   border-bottom: 5px solid #87c1dd !important;
+  transform: translateY(-2px);
+  transition: border;
 }
 .sub-nav {
   padding: 0;
@@ -71,11 +74,13 @@ body {
   height: 100%;
   outline: none;
   border: none;
-  border-bottom: 1px solid #eed4b3;
+  transition-duration: 0.2s;
 }
 .sub-nav > div > ul > li > button:hover {
-  background-color: #fbecd6;
-  border-right: 5px solid #87c1dd;
+  background-color: #eed4b3;
+}
+.sub-nav > div > ul > li > button:active {
+  transform: translateX(10px);
 }
 .active-sub-nav-button {
   border-right: 5px solid #87c1dd !important;
@@ -104,10 +109,6 @@ body {
   }
   .sub-nav > div > ul > li > button {
     min-height: 40px;
-  }
-  .sub-nav > div > ul > li > button:hover {
-    border: none !important;
-    border-bottom: 5px solid #87c1dd !important;
   }
   .active-sub-nav-button {
     border: none !important;

@@ -8,6 +8,7 @@
 
 body {
   background-color: @myColor2;
+  margin-top: 0;
 }
 
 .logo {
@@ -49,15 +50,17 @@ body {
   border: none;
   font-size: large;
   outline: none;
+  transition-duration: 0.2s;
 }
 
 .main-nav > ul > li > button:hover {
-  background-color: @myColor1;
-  border-bottom: 5px solid @myColor5 !important;
+  background-color: @myColor2;
 }
 
 .nav-active {
   border-bottom: 5px solid @myColor5 !important;
+  transform: translateY(-2px);
+  transition: border;
 }
 
 .sub-nav {
@@ -92,14 +95,16 @@ body {
   height: 100%;
   outline: none;
   border: none;
-  border-bottom: 1px solid @myColor2;
+  transition-duration: 0.2s;
 }
 
 .sub-nav > div > ul > li > button:hover {
-  background-color: @myColor1;
-  border-right: 5px solid @myColor5;
+  background-color: @myColor2;
 }
 
+.sub-nav > div > ul > li > button:active {
+  transform: translateX(10px);
+}
 .active-sub-nav-button{
   border-right: 5px solid @myColor5 !important;
 }
@@ -132,8 +137,6 @@ body {
     min-height: 40px;
   }
   .sub-nav > div > ul > li > button:hover {
-    border: none !important;
-    border-bottom: 5px solid @myColor5 !important;
   }
   .active-sub-nav-button {
     border: none !important;

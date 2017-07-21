@@ -1,5 +1,6 @@
 body {
   background-color: #eed4b3;
+  margin-top: 0;
 }
 .logo {
   height: 80px;
@@ -35,13 +36,15 @@ body {
   border: none;
   font-size: large;
   outline: none;
+  transition-duration: 0.2s;
 }
 .main-nav > ul > li > button:hover {
-  background-color: #fbecd6;
-  border-bottom: 5px solid #87c1dd !important;
+  background-color: #eed4b3;
 }
 .nav-active {
   border-bottom: 5px solid #87c1dd !important;
+  transform: translateY(-2px);
+  transition: border;
 }
 .sub-nav {
   padding: 0;
@@ -71,11 +74,13 @@ body {
   height: 100%;
   outline: none;
   border: none;
-  border-bottom: 1px solid #eed4b3;
+  transition-duration: 0.2s;
 }
 .sub-nav > div > ul > li > button:hover {
-  background-color: #fbecd6;
-  border-right: 5px solid #87c1dd;
+  background-color: #eed4b3;
+}
+.sub-nav > div > ul > li > button:active {
+  transform: translateX(10px);
 }
 .active-sub-nav-button {
   border-right: 5px solid #87c1dd !important;
@@ -105,10 +110,6 @@ body {
   .sub-nav > div > ul > li > button {
     min-height: 40px;
   }
-  .sub-nav > div > ul > li > button:hover {
-    border: none !important;
-    border-bottom: 5px solid #87c1dd !important;
-  }
   .active-sub-nav-button {
     border: none !important;
     border-bottom: 5px solid #87c1dd !important;
@@ -116,7 +117,7 @@ body {
 }
 .information {
   font-size: medium;
-  max-height: 600px;
+  height: 600px;
   overflow: auto;
 }
 .information::-webkit-scrollbar-track {
@@ -129,6 +130,17 @@ body {
 .information::-webkit-scrollbar-thumb {
   background-color: #87c1dd;
 }
+.information > div {
+  height: 90%;
+}
+.foods > div {
+  border-top: 2px solid #8d7f6a;
+  padding-top: 10px;
+}
+.split {
+  max-width: 50%;
+  float: left;
+}
 .picture-of-food {
   max-width: 50%;
   float: left;
@@ -137,28 +149,19 @@ body {
   max-width: 100%;
 }
 .food-description {
-  max-width: 50%;
   padding: 10px;
+  max-width: 50%;
   float: left;
 }
 .price {
   font-weight: bold;
   font-family: "Arial Black";
 }
-.slogan {
-  height: 600px;
-  background-color: #8d7f6a;
-  font-style: italic;
-  color: #eed4b3;
-}
-.slogan > div {
-  display: table-cell;
-  margin: auto;
-}
 @media (max-width: 640px) {
   .information {
     border: 1px solid #8d7f6a;
     margin-bottom: 50px;
+    height: auto;
   }
   .slogan {
     position: fixed;
@@ -168,4 +171,191 @@ body {
     text-align: center;
     height: auto;
   }
+}
+.employee {
+  clear: both;
+  border-top: 2px solid #8d7f6a;
+}
+.employee-pic {
+  float: left;
+  width: 25%;
+}
+.employee-text {
+  float: left;
+  width: 75%;
+  padding-right: 10px;
+}
+.employee-pic > img {
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.name {
+  clear: both;
+}
+.employee-stat {
+  font-weight: bold;
+}
+.input-list-element {
+  list-style: none;
+  font-weight: bolder;
+}
+.history-content {
+  display: none;
+  padding-top: 20px;
+}
+.history-button {
+  display: block;
+  background-color: #8d7f6a;
+  max-width: 200px;
+  text-align: center;
+  transition-duration: 0.2s;
+  user-select: none;
+}
+.history-button:hover {
+  background-color: #c5b48a;
+  cursor: default;
+}
+.history-button:active {
+  transition-duration: 0.2s;
+  transform: scale(0.9, 0.9);
+  background-color: #87c1dd;
+}
+.career {
+  height: 100%;
+}
+.career > div {
+  border-top: 2px solid #8d7f6a;
+  padding-top: 10px;
+  height: 90%;
+}
+.career-questions > div {
+  display: none;
+  height: 100%;
+}
+.career-button {
+  display: block;
+  background-color: #8d7f6a;
+  max-width: 200px;
+  text-align: center;
+  transition-duration: 0.2s;
+  user-select: none;
+}
+.career-button:hover {
+  background-color: #c5b48a;
+  color: #FFFFFF;
+}
+.quiz-message {
+  max-height: 40px;
+  background-color: #8d7f6a;
+  font-weight: bold;
+  color: #fbecd6;
+  min-width: 50%;
+  text-align: center;
+}
+.quiz {
+  display: table;
+  float: left;
+  max-width: none;
+  width: 40%;
+  margin: 5%;
+  height: 30%;
+}
+.quiz:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.quiz > div {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: large;
+  font-weight: bold;
+  color: #fbecd6;
+}
+.quiz-suspense {
+  transition-duration: 3s;
+  background-color: #000000;
+  transform: scale(0.7, 0.7);
+}
+.quiz-correct {
+  transition-duration: 0.1s;
+  background-color: #008a00 !important;
+}
+.quiz-incorrect {
+  transition-duration: 0.4s;
+  background-color: #9f0000;
+}
+.start {
+  float: none;
+  margin: 20px auto;
+}
+.slogan {
+  display: table;
+  height: 600px;
+  background-color: #8d7f6a;
+  font-style: italic;
+  color: #eed4b3;
+}
+@media (max-width: 640px) {
+  .slogan {
+    max-height: 20px;
+  }
+}
+.slogan > div {
+  vertical-align: middle;
+  display: table-cell;
+}
+.contact {
+  display: block;
+  width: 100%;
+}
+.contact-button {
+  max-width: 140px;
+  padding: 20px;
+  background-color: #8d7f6a;
+  text-align: center;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  transition-duration: 0.3s;
+}
+.contact-button:hover {
+  background-color: #c5b48a;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: default;
+  user-select: none;
+}
+.contact-button:active {
+  background-color: #fbecd6;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: scale(0.85, 0.85);
+}
+.contact-info {
+  display: none;
+}
+.contact-info-display {
+  margin: 20px 0;
+}
+.front-banner {
+  background-color: #8d7f6a;
+  color: #fbecd6;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.remove-banner {
+  transition-duration: 0.5s;
+  transform: translateY(-50%) scale(1, 0);
+}
+.front-banner > div {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.front-banner > div > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: xx-large;
 }

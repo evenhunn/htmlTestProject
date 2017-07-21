@@ -6,7 +6,11 @@
         content="width=device-width, initial-scale=1.0">
   <title>Title</title>
 </head>
-<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="freakingApp">
+<script> var freakingApp = angular.module("freakingApp", []);</script>
+<div class="page-size">
+
 <link rel="stylesheet"
       href="freakingStylesGrid.css">
 <link rel="stylesheet"
@@ -152,13 +156,290 @@
       <p>
         Freakin Cuisine has been around for several hours, and is a fantastic fictional restaurant.
       </p>
-      <div class="history" id="history"></div>
-      <div class="ingredients" id="ingredients"></div>
-      <div class="employees" id="employees"></div>
-      <div class="career" id="career"></div>
-      <div class="contact" id="contact"></div>
-    </div>
+      <div class="history" id="history" ng-controller="historyCtrl">
+        <div ng-click="showHistory()" class="history-button" id="history-button">
+          Click here to show history.
+        </div>
+        <div id="history-content" class="history-content">
+          <p>Boxing has been in the news lately since Uwe Boll, in an attempt to prove that his films are good after all, challenged his critics to take him on in the ring. But did you know that boxing was not always a violent sport?</p>
 
+          <p>As conceived in 1632 by Portuguese printing press operator Andre Felipe, boxing was a gentleman's game, in which two men would square off and regale each other with stories monotonous for days on end, until one of them fell to the ground from boredom or exhaustion. Over the next few years the new sport developed a respectable following of a few hundred local socialites.</p>
+
+          <p>Ironically, it was Felipe's son, Andre Felipe Felipe, who developed what he called the “Punching” strategy, in 1637, after seeing a schoolboy strike another in anger, causing him to fall down. When Andre Felipe Felipe challenged the then-champion, British expatriate “Sleepless” Bill Bishop, to a match, Bishop was the odds-on favorite. You can imagine his surprise when, while he was describing what he had had for breakfast that morning, Andre walked up and thumped him in the neck, sending him down “for the count,” in the parlance of our time.</p>
+
+          <p>While it was universally agreed that the boy had violated the spirit of the game, officials were unable to find any actual rule that “Punching” violated, and were forced to let the victory stand. This upset caused an uproar in the boxing community large enough to spill over into local newspapers, which drew the interest of many outsiders to come see what all the fuss was about. The newcomers were enthralled to engage in these borderline-barbaric displays of human strength and skill, and the rest is history -- after a few spoilsport schoolmarms single-minded about safety added the padded gloves, of course.</p>
+
+          <p>Today's boxing enthusiasts fantasize about a newcomer that would rock the ring the way Felipe did. Calcification of the modern rule set has essentially locked the “Punching” strategy into place, but it's easy to get caught up in the fantasy. Young scholars with big dreams often enter the ring with their crazy new trick, usually a variant of hypnosis, and though they've achieved the occasional victory, none of the gimmicks have been robust enough to make it to the big time.</p>
+
+          <p>The real wonder, though, is that Andre Felipe's original vision of boxing is still around! Gentleman's Boxing clubs can be found in cities all over the world. You can visit one most any day of the week and see two erudite gentlemen exchanging pleasantries in the ring. Most people only come to watch a few hours of a match and then leave, but every once in a while you'll find amongst your elders a stout fellow, a die-hard fan, who perhaps witnessed that historic battle between Felipe and Bishop, who for love of the sport must stay to witness the last glorious seconds of wakefulness slip away... only to return to fight again another day.</p>
+        </div>
+      </div>
+      <script>
+        freakingApp.controller('historyCtrl',function($scope){
+          $scope.showHistory = function(){
+            var buttontext = document.getElementById("history-button").innerText;
+            document.getElementById("history-content").classList.toggle("show-content");
+            if (buttontext === "Click here to show history.") {
+              document.getElementById("history-button").innerHTML = "Hide history";
+            } else {
+              document.getElementById("history-button").innerHTML = "Click here to show history.";
+            }
+          }
+        });
+      </script>
+
+
+      <div class="ingredients" id="ingredients" ng-controller="ingredientsCtrl">
+        <ul>
+          <li class="input-list-element">Filter: <input type="text" ng-model="test"></li>
+          <li ng-repeat="x in ingredients | filter:test">
+            {{x}}
+          </li>
+        </ul>
+      </div>
+
+      <script>
+      freakingApp.controller('ingredientsCtrl',function($scope) {
+        $scope.ingredients = [
+          'salt',
+          'pepper',
+          'tomato',
+          'durum flour',
+          'water',
+          'dogs',
+          'wheat',
+          'yeast',
+          'kamelåså',
+          'pork',
+          'beans',
+          'onions',
+          'basil',
+          'hard work'
+          ];
+      });
+      </script>
+
+      <div class="employees" id="employees">
+
+        <div class="employee">
+          <h3>Head chef</h3>
+          <h3 class="name">Even Hansen</h3>
+          <div class="employee-text">
+            Even has been the head chef of Freaking Cuisine since the very begining. He has fought his way through endless waves of dinosaurs and pterodactyls to reach his goal of becoming the head of his very own restaurant. Even is a pretty cool guy, and doesn't afraid of anything.
+            <ul class="stat-list">
+              <li><span class="employee-stat">Age:</span> 26 years</li>
+              <li><span class="employee-stat">Height:</span> 182 cm</li>
+              <li><span class="employee-stat">Power level:</span> 9001</li>
+            </ul>
+          </div>
+          <div class="employee-pic">
+            <img src="../images/HansenEven.jpg" class="profile">
+          </div>
+        </div>
+
+        <div class="employee">
+          <h3>Potato-peeler</h3>
+          <h3 class="name">Smud Smudesen</h3>
+          <div class="employee-text">
+            Smud had been a potato peeler for several years, and is the current last in line of a long history of potato peeling. Less than a year ago, Smud was promoted from peeling hot dogs, ensuring the continuation of his legacy.
+            <ul class="stat-list">
+              <li><span class="employee-stat">Age:</span> 18 years</li>
+              <li><span class="employee-stat">Height:</span> 162 cm</li>
+              <li><span class="employee-stat">Power level:</span> 10</li>
+            </ul>
+          </div>
+          <div class="employee-pic">
+            <img src="../images/SmudesenSmud.jpg" class="profile">
+          </div>
+        </div>
+
+        <div class="employee">
+          <h3>Dog</h3>
+          <h3 class="name">Commander Sniff</h3>
+          <div class="employee-text">
+            Sniff is a dog. He uses his set of skills to walk around the restaurant and occasionally bark at exotic people. Though it has been mentioned that Sniff is a bit heavy, we can confirm that he's not fat. He's just a little Husky.
+            <ul class="stat-list">
+              <li><span class="employee-stat">Age:</span> 3 years</li>
+              <li><span class="employee-stat">Height:</span> 73 cm</li>
+              <li><span class="employee-stat">Power level:</span> 1337</li>
+            </ul>
+          </div>
+          <div class="employee-pic">
+            <img src="../images/husky.jpg" class="profile">
+          </div>
+        </div>
+
+      </div>
+      <div class="career" id="career">
+        <div class="quiz-message" id="quizMessage">Quiz!</div>
+        <div ng-controller="careerCtrl" id="careerQuestions" class="career-questions">
+          <div id="round0" class="career-main show-content">
+            I want to play a game. You may have a career-section if you can answer these simple food-related questions correctly.<br>
+
+            <div class="career-button quiz start" ng-click="advanceTo(1)"><div>Click here to start</div></div>
+
+          </div>
+          <div id="round1">
+            <h2>Question 1</h2>
+            What is the botanical category of a banana?<br>
+
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Fruit
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(2)"><div>
+              Berry
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Nut
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Potato
+            </div></div>
+
+          </div>
+          <div id="round2">
+            <h2>Question 2</h2>
+            What is pepper?<br>
+
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Fruit
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Berry
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(3)"><div>
+              Robot
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Potato
+            </div></div>
+          </div>
+          <div id="round3">
+            <h2>Question 3</h2>
+            What can you feed a cow to make it fart less?<br>
+
+            <div class="career-button quiz" ng-click="advanceTo(4)"><div>
+              Seaweed
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Potato
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Wheat
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              water
+            </div></div>
+          </div>
+          <div id="round4">
+            <h2>Question 4</h2>
+            Which box was the answer to question number 1?<br>
+
+            <div class="career-button quiz" ng-click="advanceTo(5)"><div>
+              The one to the right of this
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              The one bellow this
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              The one above this
+            </div></div>
+            <div class="career-button quiz" ng-click="advanceTo(0)"><div>
+              Potato
+            </div></div>
+          </div>
+          <div id="round5">
+            Nice. Gratz. You won. But... I don't think you want a career in this job anyways.<br>
+            <div class="career-button quiz start" ng-click="advanceTo(0)"><div>
+              Go back...
+            </div></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        freakingApp.controller ('careerCtrl', function($scope) {
+          $scope.advanceTo = function(roundNumber){
+            var quizMessage = document.getElementById("quizMessage");
+            if (roundNumber === 1) {
+              nextRound(roundNumber);
+              return;
+            }
+            addAnswerStyle("quiz-suspense");
+            quizMessage.innerHTML = "Your answer is..."
+            setTimeout(function() {
+              removeAnswerStyle("quiz-suspense");
+              if (roundNumber !== 0) {
+                addAnswerStyle("quiz-correct");
+                quizMessage.innerHTML = "Your answer is CORRECT!";
+              } else {
+                addAnswerStyle("quiz-incorrect");
+                quizMessage.innerHTML = "Your answer is incorrect.";
+              }
+              setTimeout(function(){
+                removeAnswerStyle("quiz-correct");
+                removeAnswerStyle("quiz-incorrect");
+                quizMessage.innerHTML = "Quiz";
+                nextRound(roundNumber);
+              },1000);
+            },3000)
+          };
+
+          function addAnswerStyle(style) {
+            var parents = document.getElementById("careerQuestions").children;
+            for (var i=0; i<parents.length-1;i++) {
+              var answers = parents[i].children;
+              for (var j=1; j<answers.length; j++) {
+                answers[j].classList.add(style);
+              }
+            }
+          }
+
+          function removeAnswerStyle(style) {
+            var parents = document.getElementById("careerQuestions").children;
+            for (var i=0; i<parents.length-1;i++) {
+              var answers = parents[i].children;
+              for (var j=1; j<answers.length; j++) {
+                answers[j].classList.remove(style);
+              }
+            }
+          }
+
+          function nextRound(roundNumber){
+            var rounds = document.getElementById("careerQuestions").children;
+            for (var i=0; i<rounds.length; i++) {
+              rounds[i].classList.remove("show-content");
+            }
+            document.getElementById("round"+roundNumber).classList.add("show-content");
+          }
+        });
+      </script>
+
+      <div class="contact" id="contact" ng-controller="contactCtrl">
+        <div class="contact-button" ng-click="showMore()">
+          Click here to get information
+        </div>
+        <div id="contactInfo" class="contact-info">
+          Freaking Cafe <br> Baker street 221b,<br> Marylebone, London<br>NW1 6XE, UK
+        </div>
+        <div id="contactInfoDisplay" class="contact-info-display"></div>
+      </div>
+
+      <script>
+        freakingApp.controller('contactCtrl', function($scope){
+          var i=0;
+          var fullInfo = document.getElementById("contactInfo").textContent;
+          console.log(fullInfo);
+          $scope.showMore = function() {
+            i++;
+            document.getElementById("contactInfoDisplay").innerHTML =
+              fullInfo.substring(0,i+11) + "<br>YOU HAVE CLICKED "
+              + i
+              + " TIMES!";
+          }
+        })
+      </script>
+
+    </div>
 
   </div>
   <div class="col-2 slogan">
@@ -168,5 +449,25 @@
   </div>
 </div>
     <script src="freakingScript.js"></script>
+</div>
+
+
+<div ng-controller = "frontBannerCtrl">
+  <div class="front-banner" id="frontBanner"  ng-click="removeBanner();">
+    <div>
+      <div>
+        Welcome
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  freakingApp.controller ('frontBannerCtrl', function($scope) {
+    $scope.removeBanner = function(){
+      document.getElementById("frontBanner").classList.add("remove-banner");
+    }
+  });
+</script>
+
 </body>
 </html>
